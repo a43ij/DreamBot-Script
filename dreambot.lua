@@ -1,9 +1,3 @@
-game:GetService("StarterGui"):SetCore("SendNotification", {
-    Title = "通知",
-    Text = "スクリプトが読み込まれました",
-    Duration = 5
-})
-
 local TweenService = game:GetService("TweenService")
 local UserInputService = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
@@ -26,7 +20,7 @@ ScreenGui.Name = guiName
 ScreenGui.ResetOnSpawn = false
 
 local successParent = pcall(function()
-    ScreenGui.Parent = game:GetService("CoreGui")
+    ScreenGui.Parent = (gethui and gethui()) or game:GetService("CoreGui")
 end)
 if not successParent then
     ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
@@ -128,7 +122,7 @@ UserInputService.MouseBehavior = Enum.MouseBehavior.Default
 UserInputService.MouseIconEnabled = true
 
 UserInputService.InputBegan:Connect(function(input, processed)
-    if processed then return end
+    if processed then return end 
     if input.KeyCode == Enum.KeyCode.K then
         isViewLocked = not isViewLocked
         if isViewLocked then
@@ -428,6 +422,7 @@ RunService.Heartbeat:Connect(function(delta)
         
         if isFlyOn() then
             hum.PlatformStand = true
+            
             hrp.CFrame = CFrame.lookAt(hrp.Position, hrp.Position + Camera.CFrame.LookVector)
             
             local moveDir = hum.MoveDirection
@@ -582,8 +577,10 @@ FOVCircleUI.AnchorPoint = Vector2.new(0.5, 0.5)
 FOVCircleUI.Position = UDim2.new(0.5, 0, 0.5, 0)
 local FOVStroke = Instance.new("UIStroke", FOVCircleUI)
 FOVStroke.Color = Color3.fromRGB(50, 255, 255)
-Instance.new("UICorner", FOVCircleUI).CornerRadius = UDim.new(1, 0
+Instance.new("UICorner", FOVCircleUI).CornerRadius = UDim.new(1, 0)
+
 RunService.RenderStepped:Connect(function()
+ 
     for _, p in pairs(Players:GetPlayers()) do
         if p ~= LocalPlayer and p.Character then
             local char = p.Character
@@ -624,7 +621,7 @@ RunService.RenderStepped:Connect(function()
                     high.Name = "DreamBotChams"
                 end
                 high.FillColor = Color3.fromRGB(255, 0, 0) 
-                high.FillTransparency = 0.15
+                high.FillTransparency = 0.15 
                 high.OutlineColor = Color3.fromRGB(255, 255, 255)
                 high.OutlineTransparency = 0.2
             elseif high then high:Destroy() end
