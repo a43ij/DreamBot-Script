@@ -26,7 +26,7 @@ ScreenGui.Name = guiName
 ScreenGui.ResetOnSpawn = false
 
 local successParent = pcall(function()
-    ScreenGui.Parent = (gethui and gethui()) or game:GetService("CoreGui")
+    ScreenGui.Parent = game:GetService("CoreGui")
 end)
 if not successParent then
     ScreenGui.Parent = LocalPlayer:WaitForChild("PlayerGui")
