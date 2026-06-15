@@ -8,8 +8,12 @@ The code is also publicly available, so it would be great for learning Lua.
 
 ## H.T.U.
 
-1. ```loadstring(game:HttpGet("https://raw.githubusercontent.com/a43ij/DreamBot-Script/refs/heads/main/Dream%20Bot%20Beta%20%5B%CE%B2%5D.lua"))()``` Please copy this.
+1. "```loadstring(game:HttpGet("https://raw.githubusercontent.com/a43ij/DreamBot-Script/refs/heads/main/Dream%20Bot%20Beta%20%5B%CE%B2%5D.lua"))()```"  Please copy this.
 2. Paste the copied content into a Roblox external executable program (such as Delta or Krnl for iOS, or Xeno for Windows).
 3. All that's left is to run it within the external execution engine. Let's make it even more fun by using scripts!
 
+## Q&A
 
+For questions or inquiries such as "The script isn't working" or "I'd like you to add this feature," please contact us via Discord ID "godpacman".
+
+We look forward to hearing from you.
